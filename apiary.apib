@@ -1,0 +1,48 @@
+FORMAT: 1A
+HOST: https://dcs-practical-assessment.herokuapp.com/
+
+# dsc-practical-assessment
+
+Collection of endpoints for the DCS assessments
+
+## Metric Collection [/metric]
+
+### Post a metric [POST /metric/{key}]
+
+Store a metric through this endpoint
+
++ Parameters
+    + key (string) - key of the metric to be stored
+
++ Response 201 (application/json)
+
+        {
+        }
+        
++ Response 400 (application/json)
+
+        [
+            {
+                "value": "4s",
+                "msg": "Invalid value",
+                "param": "value",
+                "location": "body"
+            }
+        ]
+
+### Fetch metric sum [GET /metric/{key}/sum]
+
+Fetch the sum of a metric in the last hour
+
++ Parameters
+    
+    + key (string) - key of the metric to be fetched
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "value": 200
+            }
